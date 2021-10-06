@@ -1,0 +1,86 @@
+import java.io.*;
+import java.util.*;
+public class odev 
+{
+public static void main(String args[]) throws IOException
+{
+int limit,k;
+
+Scanner sc=new Scanner(System.in);
+Scanner s=new Scanner(System.in);
+
+System.out.println("Enter limit");
+limit=sc.nextInt();
+
+int a[]=new int[limit+3];
+
+File f1=new File("/home/exam/exam/sample.txt");
+File f2=new File("/home/exam/exam/evennums.txt");
+File f3=new File("/home/exam/exam/oddnums.txt");
+FileWriter w=new FileWriter("/home/exam/exam/sample.txt");
+FileWriter we=new FileWriter("/home/exam/exam/evennums.txt");
+FileWriter wo=new FileWriter("/home/exam/exam/oddnums.txt");
+
+if(f1.createNewFile())
+{
+System.out.println("Sample file is  Created");
+}
+else
+{
+System.out.println("File Exists");
+}
+
+if(f2.createNewFile())
+{
+System.out.println("Even file is Created");
+}
+else
+{
+System.out.println("File Exists");
+}
+
+if(f3.createNewFile())
+{
+System.out.println("Odd file is Created");
+}
+else
+{
+System.out.println("File Exists");
+}
+
+
+
+System.out.println("Enter numbers");
+for(int i=0;i<limit;i++)
+{
+a[i]=s.nextInt();
+w.write(a[i]+"\n");
+
+if(a[i]%2==0)
+{
+we.write(a[i]+"\n");
+}
+else
+{
+wo.write(a[i]+"\n");
+}
+}
+
+
+
+
+
+
+
+we.close();
+wo.close();
+w.close();
+}
+}
+
+
+
+
+
+
+
